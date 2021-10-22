@@ -1,0 +1,10 @@
+.spinner-exemple{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    margin :20px auto;
+}
+
+.spinner-exemple > *{
+    margin: 10px ;
+}

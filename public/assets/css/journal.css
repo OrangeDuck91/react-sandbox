@@ -1,0 +1,294 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #88b4dc;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+}
+
+a {
+  color: #000000;
+}
+
+.visualy-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main>* {
+  width: 60%;
+  padding: 10px 50px;
+  margin: 10px 0;
+  box-shadow: 2px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+header img {
+  height: 70px;
+  margin: 0 30px 0 0;
+}
+
+header a {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+header a:hover,
+header a:focus {
+  opacity: 1;
+  background-color: #005aa2;
+  color: white;
+}
+
+main sii-top-nav-bar {
+  padding: 0 50px;
+}
+
+.main-content {
+  flex: 1;
+}
+
+footer {
+  height: 30px;
+  line-height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 25px;
+}
+
+footer a {
+  min-width: 30%;
+  text-align: right;
+}
+
+footer a:focus,
+footer a:hover {
+  background-color: #005aa2;
+  color: white;
+}
+
+#menu{
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  padding: 10px;
+  display: block;
+}
+
+a:hover,
+a:focus {
+  background-color: #005aa2;
+  color: white;
+}
+
+a.active-menu{
+  background-color: #005aa2;
+  color: white;
+}
+
+@media (min-width: 40em) {
+  .menu-level-1{
+    position: relative;
+    flex: 1;
+    text-align: center;
+    border-left: 1px solid #005aa2;
+  }
+
+  .menu-level-1.menu-level-2{
+    position: absolute;
+    background-color: white;
+    left: -1px;
+    border: 1px solid #005aa2;
+    border-top: none;
+    width: 100%;
+    top: 38px;
+    transition: all .2s;
+  }
+
+  .menu-level-1.menu-level-2li{
+    display: block;
+  }
+
+  .menu-level-1:last-of-type {
+    border-right: 1px solid #005aa2;
+  }
+}
+
+@media (max-width: 39.9999em) {
+  #menu{
+    flex-direction: column;
+  }
+
+  .menu-level-1.menu-level-2{
+    padding-left: 40px;
+  }
+
+  #toogle-nav{
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    border-right: 1px solid #005aa2;
+    border-left: 1px solid #005aa2;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  #toogle-nav:hover,
+  #toogle-nav:focus {
+    background-color: white;
+  }
+}
+
+a:hover,
+a:focus {
+  background-color: #005aa2;
+  color: white;
+}
+
+.article-item-body {
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+.article-item-body img {
+  flex: 1;
+  max-width: 250px;
+  max-height: 180px;
+  width: auto;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.article-item-body span {
+  flex: 3;
+  padding-left: 15px;
+}
+
+article {
+  margin-bottom: 25px;
+  border-bottom: 2px solid #8080806b;
+  padding-bottom: 20px;
+}
+
+input[type=text],
+select,
+textarea,
+input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 150px;
+  resize: none;
+}
+
+input.hasErrors,
+textarea.hasErrors {
+  background-color: lightcoral;
+}
+
+.error-label {
+  color: red;
+  font-weight: bold;
+  float: right;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.form-footer .message-sent {
+  background-color: lightgreen;
+  border: 2px solid green;
+}
+
+.form-footer .error-message {
+  background-color: lightcoral;
+  border: 2px solid red;
+  position: relative;
+}
+
+.form-footer .error-message div {
+  position: absolute;
+  top: -13px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.form-footer .error-message,
+.form-footer .message-sent {
+  border-radius: 3px;
+  width: calc(100% - 140px);
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+}
+
+.form-footer .send-button {
+  border-radius: 2px;
+  background-color: lightblue;
+  background-image: url("/assets/images/send.png");
+  height: 50px;
+  width: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #c6cde2;
+  cursor: pointer;
+}
+
+.form-footer .send-button:hover {
+  border: 2px solid #101415;
+}
+
