@@ -1,6 +1,14 @@
 import { Component } from 'react';
+import { connect } from 'react-redux';
 
-export class Article extends Component {
+class Article extends Component {
+
+    titleClicked(event) {
+        const { id, title, dispatch } = this.props;
+        console.log('titleClicked', title);
+        dispatch({ type: 'articles/articleTitleClicked', playload: { id } })
+    }
+
     render() {
         const {
             id,
@@ -9,9 +17,12 @@ export class Article extends Component {
             pictureDescription,
             intro
         } = this.props;
+
+        const titleClicked = this.titleClicked.bind(this);
+
         return (
             <article id={id}>
-                <h2><a>{title}</a></h2>
+                <h2 onClick={titleClicked}><a>{title}</a></h2>
                 <div className="article-item-body" >
                     <img src={picture} alt={pictureDescription} />
                     <span>{intro}</span>
@@ -20,3 +31,5 @@ export class Article extends Component {
         )
     }
 }
+
+export default connect()(Article)
