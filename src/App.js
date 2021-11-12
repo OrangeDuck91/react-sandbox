@@ -1,10 +1,14 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Article from './Article/Article';
 
 const selectedArticles = (state) => state.articles;
 
 function App() {
+
+  const dispatch = useDispatch();
+  dispatch({ type: 'articles/loadArticles' });
 
   const articles = useSelector(selectedArticles);
 

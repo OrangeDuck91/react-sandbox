@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+
 const initialState = [
     {
         id: 1,
@@ -21,6 +23,11 @@ export default function articleReducer(state = initialState, action) {
             return action.playload;
         case 'articles/articleTitleClicked':
             return state.filter(article => article.id === action.playload?.id);
+        case 'articles/loadArticles':
+        // fetch("https://localo/items").then(res => {
+        //     console.log('loaded', res)
+        //     // dispatch({ type: 'articles/articlesLoaded', playload: res });
+        // })
         default:
             return state;
     }
