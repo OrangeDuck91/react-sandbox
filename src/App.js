@@ -1,16 +1,14 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import './App.css';
 import Article from './Article/Article';
 
 
-function App() {
-
-  const dispatch = useDispatch();
+const App = ({ dispatch }) => {
 
   useEffect(() => {
     dispatch({ type: 'articles/loadArticles' });
-  }, [])
+  }, [dispatch])
 
   const articles = useSelector((state) => state.articles);
 
@@ -28,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App)
