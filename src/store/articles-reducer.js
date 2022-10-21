@@ -13,21 +13,21 @@ const initialState = [
         title: 'Top 10 of the viruses that nearly destroyed humanity.',
         picture: '../assets/images/article2.jpg',
         pictureDescription: 'A big virus',
-        intro: 'Form the Black Plague to the HIV, human race as always been threatened by epidemics. Among theses viruses, some of them were close to destroy humanity.'
+        intro: 'Form the Black Plague to the HIV, human race as always been threatened by epidemics. Among theses viruses, some of them were close to destroy humanity.'
     }
 ];
 
 export default function articleReducer(state = initialState, action) {
     switch (action.type) {
         case 'articles/articlesLoaded':
+            console.log('articles/articlesLoaded called')
             return action.playload;
         case 'articles/articleTitleClicked':
+            console.log('articles/articleTitleClicked called')
             return state.filter(article => article.id === action.playload?.id);
         case 'articles/loadArticles':
-        // fetch("https://localo/items").then(res => {
-        //     console.log('loaded', res)
-        //     // dispatch({ type: 'articles/articlesLoaded', playload: res });
-        // })
+            console.log('articles/loadArticles called');
+            return state
         default:
             return state;
     }
